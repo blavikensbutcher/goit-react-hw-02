@@ -1,7 +1,14 @@
 .container {
     padding: 20px;
     display: flex;
-    /*flex-direction: column;*/
     gap: 10px;
     justify-content: center;
+}
+
+.good {
+    color: green;
+}
+
+.bad {
+    color: darkred;
 }

@@ -3,6 +3,9 @@ import css from "./Option.module.css"
 import {RiEmotionHappyLine} from "react-icons/ri";
 import {BsEmojiNeutral} from "react-icons/bs";
 import {FaRegAngry} from "react-icons/fa";
+import {Button} from "@mui/material";
+import {green} from "@mui/material/colors";
+
 
 export const Options = ({stats, stats: {good, neutral, bad}, setStats, total}) => {
 
@@ -41,10 +44,11 @@ export const Options = ({stats, stats: {good, neutral, bad}, setStats, total}) =
 
     return (
         <div className={css.container}>
-            <button onClick={goodReview}>Good <RiEmotionHappyLine color={"green"} size={15}/></button>
-            <button onClick={neutralReview}>Neutral <BsEmojiNeutral color={"darkgoldenrod"} size={15}/></button>
-            <button onClick={badReview}>Bad <FaRegAngry color={"red"} size={15}/></button>
-            {total > 0 && <button onClick={dropReview}>Reset</button>}
+            <Button onClick={goodReview} color="success" variant="outlined">Good </Button>
+            <Button onClick={neutralReview} color="warning" variant="outlined">Neutral </Button>
+            <Button onClick={badReview} color="error" variant="outlined">Bad </Button>
+
+            {total > 0 && <Button onClick={dropReview}>Reset</Button>}
         </div>
     )
 }

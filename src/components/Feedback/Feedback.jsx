@@ -8,7 +8,9 @@ export const Feedback = ( { stats, total }) => {
             <span>Neutral: {stats.neutral} </span>
             <span>Bad: {stats.bad} </span>
             <span>Total: {total}</span>
-            {total > 0 && <span>Positive: {Math.round(((stats.good + stats.neutral) / total) * 100)}%</span>}
+            {total > 0 && <span className={
+                (Math.round(((stats.good + stats.neutral) / total) * 100)) > 50 ? css.good : css.bad
+            }>Positive: {Math.round(((stats.good + stats.neutral) / total) * 100)}%</span>}
         </div>
     )
 }
